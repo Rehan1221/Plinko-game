@@ -1,0 +1,750 @@
+@import './reset.css';
+@import './normalize.css';
+@import './skeleton.css';
+@import '../../../node_modules/highlight.js/styles/tomorrow-night-bright.css';
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Fredoka+One|Lato:400,400i,700,900');
+
+body {
+  background: #c6c6c6;
+  color: #fff;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.nav-container {
+  width: 100%;
+  background: #7dd3ef;
+}
+
+.nav-container {
+  padding-top: 1rem;
+}
+
+nav,
+header {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+header h1 {
+  font-family: 'Fredoka One', sans-serif;
+  letter-spacing: .01rem;
+}
+
+header h1 a,
+header h1 a:hover {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+header h1 {
+  font-size: 6rem;
+  letter-spacing: .1rem;
+  margin: 2rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cabin Sketch', sans-serif;
+  letter-spacing: .01rem;
+  margin-bottom: .5rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+.carousel h2,
+.lobby h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 2rem;
+  color: #a3a3a3;
+}
+
+a:hover {
+  color: #9bc1bc;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+em {
+  font-style: italic;
+}
+
+.hljs {
+  background-color: #303030;
+  padding: 0;
+}
+
+main {
+  background: #c6c6c6;
+}
+
+.button {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  border-color: #fff;
+  width: 100%;
+  padding: 0;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.button-primary:disabled,
+.button-primary:disabled:hover {
+  background-color: #c6c6c6;
+  border-color: #c6c6c6;
+}
+
+wired-button {
+  background-color: #ffea8c;
+  outline: none;
+  width: 100%;
+}
+
+nav wired-button {
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: .1rem;
+  padding: .4rem;
+  width: 100%;
+}
+
+nav wired-button:hover {
+  background-color: #fff;
+  color: #555;
+}
+
+nav a {
+  width: 100%;
+  display: inline-block;
+}
+
+.name-form wired-button {
+  width: 100px;
+  height: 50px;
+}
+
+.active-players wired-button {
+  width: 150px;
+  height: 50px;
+}
+
+wired-card {
+  background-color: inherit;
+}
+
+.lobby wired-card {
+  background-color: #e6ebe0;
+}
+
+.waiting-players wired-card {
+  width: 170px;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  padding: .5rem;
+}
+
+.waiting-players wired-card p {
+  margin: 1rem;
+}
+
+.banner {
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  height: 4.5rem;
+  line-height: 3.9rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 2rem;
+  opacity: .9;
+  background-color: #777;
+  color: #fff;
+}
+
+.winner-banner {
+  top: 61%;
+  height: 10rem;
+  line-height: 9rem;
+  opacity: .8;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.winner-name {
+  font-family: 'Cabin Sketch', sans-serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.main-content,
+.game-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #555;
+}
+
+.main-content {
+  padding: 2rem 3rem;
+}
+
+@media (min-width: 500px) {
+  .main-content {
+    padding: 4rem 6rem;
+  }
+}
+
+.game-container {
+  margin-top: 0;
+  background-color: #c6c6c6;
+}
+
+.canvas-container {
+  max-width: 800px;
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+}
+
+.canvas-container canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.lobby {
+  padding-top: 0;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  font-size: 2rem;
+}
+
+.lobby h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: .05rem;
+}
+
+.lobby ul {
+  list-style: none;
+  display: inline-block;
+}
+
+.lobby input,
+.lobby button {
+  height: 5rem;
+  font-size: 2rem;
+}
+
+.lobby input {
+  margin-right: 2rem;
+}
+
+input[type="text"]:focus {
+  border-color: #555;
+}
+
+.lobby button.start {
+  margin-top: 3rem;
+}
+
+.player-info {
+  padding-top: 6rem;
+  overflow: auto;
+}
+
+.rules {
+  width: 70%;
+  margin: 4rem auto 2rem auto;
+  text-align: center;
+}
+
+.rule h2 {
+  font-family: 'Lato';
+  font-weight: 700;
+  display: inline-block;
+  margin: 0 .5rem;
+  font-size: 1.6rem;
+  letter-spacing: normal;
+}
+
+.rule p {
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+.rule {
+  margin-bottom: 1.5rem;
+}
+
+.reminder {
+  display: block;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 5rem;
+}
+
+.waiting-players ul {
+  opacity: .7;
+}
+
+.name-form {
+  text-align: center;
+}
+
+.alert {
+  background-color: #fff4e0;
+  line-height: 1.5rem;
+  border: 1px solid #fcd88f;
+  padding: .5rem;
+  font-size: 1.3rem;
+  border-radius: 2px;
+}
+
+#scores {
+  background-color: #fff;
+  color: #555;
+  font-size: 1.2rem;
+  letter-spacing: .05rem;
+  padding: .5rem 1.5rem .2rem 0;
+  margin: 1rem auto;
+  width: 97.5%;
+  /* box-sizing: border-box; */
+}
+
+#scores ul {
+  list-style: none;
+  text-indent: 0;
+  margin-bottom: 0;
+}
+
+#scores li {
+  margin-bottom: 0;
+  line-height: 1rem;
+}
+
+.score-name {
+  width: 20%;
+  text-align: right;
+  margin-right: .5rem;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.score-bar-container {
+  width: 75%;
+  height: 1.5rem;
+  display: inline-block;
+}
+
+.score-bar {
+  border-radius: 2px;
+  display: inline-block;
+  height: 1rem;
+  min-width: 1px;
+}
+
+.score-target {
+  display: inline-block;
+  min-width: 1px;
+  font-family: 'Cabin Sketch', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.score-bar-container wired-card {
+  /* accounts for unchangeable minimum width of wired-cards, which pushes bar too far to right */
+  margin-left: -10px;
+}
+
+.target-border {
+  border-left: 2px dashed #555;
+  position: relative;
+  float: right;
+  min-width: 1px;
+  height: 1.3rem;
+}
+
+.winner {
+  color: #7dd3ef;
+}
+
+.button-container,
+.card-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.player-0 wired-card,
+.player-0.banner {
+  background-color: #ffaaaa;
+}
+.player-1 wired-card,
+.player-1.banner  {
+  background-color: #94dad1;
+}
+.player-2 wired-card,
+.player-2.banner  {
+  background-color: #ffea8c;
+}
+.player-3 wired-card,
+.player-3.banner  {
+  background-color: #c7b4f2;
+}
+
+/* Pages */
+
+.main-content {
+  font-size: 1.7rem;
+}
+
+p,
+.p,
+figure {
+  margin-bottom: 2rem;
+}
+
+figure {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+/* at large screen sizes, constrain width of small and medium images */
+@media (min-width: 500px) {
+  img.small,
+  .small img {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  img.medium,
+  .medium img {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+ul, ol {
+  margin-left: 3rem;
+  list-style-position: outside;
+}
+
+ul {
+  list-style: disc;
+}
+
+ul ul {
+  font-size: 100%;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+li {
+  padding-left: .5rem;
+  margin-bottom: .5rem;
+}
+
+code {
+  border: none;
+  background: transparent;
+}
+
+figcaption,
+.figcaption,
+.legend {
+  font-size: 1.4rem;
+  font-style: italic;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 140%;
+  text-align: center;
+}
+
+.figcaption {
+  margin-bottom: 2rem;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-container {
+  max-width: 100%;
+  overflow: auto;
+}
+
+th {
+  font-weight: bold;
+}
+
+table,
+th,
+td {
+  border: 1px solid #E1E1E1;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 15px;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 15px;
+}
+
+aside {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+aside :last-child {
+  margin-bottom: 0;
+}
+
+.aside-container {
+  margin-bottom: 2rem;
+}
+
+.aside-container wired-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.emphasized wired-card {
+  background-color: #e6ebe0;
+}
+
+/* Table of Contents */
+
+@media (min-width: 675px) {
+  .toc {
+    float: right;
+    margin-left: 1rem;
+  }
+
+  .toc .aside-container {
+    margin-bottom: 0;
+  }
+}
+
+.toc {
+  font-size: 1.5rem;
+}
+
+.toc ol + .p {
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: .5rem;
+}
+
+.toc ol {
+  counter-reset: item;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.toc ol:first-child {
+  margin-left: 0;
+}
+
+.toc li {
+  display: block;
+  margin-bottom: 0;
+}
+
+.toc li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  margin-right: .5rem;
+}
+
+/* Image Sliders */
+
+.slick-slider img {
+  width: 100%;
+}
+
+.slick-next,
+.slick-prev {
+  top: 45%;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: #000;
+}
+
+.legend {
+  margin-bottom: 0;
+  padding: .5rem 1rem;
+}
+
+.slick-dots {
+  bottom: 0;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Rough Circles */
+
+.lobby .rough-circle {
+  position: relative;
+  margin-right: .5rem;
+}
+
+.rough-circle canvas {
+  position: relative;
+}
+
+.lobby .rough-circle canvas {
+  top: .5rem;
+}
+
+.citation .rough-circle canvas {
+  top: .4rem;
+}
+
+header .rough-circle canvas {
+  left: -4rem;
+  top: .5rem;
+}
+
+/* Team */
+
+.team ul,
+ul.team {
+  margin: 0 0 2rem 0;
+  padding: 0;
+}
+
+.team li {
+  display: inline-block;
+  padding-left: 2rem;
+  text-align: center;
+}
+
+.team img {
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+.team a {
+  text-decoration: none;
+}
+
+/* Citations */
+
+.citation {
+  position: relative;
+  cursor: help;
+  margin: 0 .2rem;
+  font-style: normal;
+  color: #363636;
+}
+
+.citation > div {
+  font-size: 80%;
+  display: block;
+  position: absolute;
+  top: 1rem;
+  width: 82vw;
+  background-color: #E6EBE0;
+  border: solid 1px #363636;
+  padding: 1rem;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+@media (min-width: 850px) {
+  .citation > div {
+    left: -13rem;
+    width: 26rem;
+  }
+}
+
+.citation p,
+.citation div.p {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+}
+
+.citation a {
+  word-break: break-word;
+}
+
+.citation table {
+  margin: 0;
+  width: 100%;
+  border: none;
+}
+
+.citation th,
+.citation td {
+  vertical-align: top;
+  border: none;
+}
+
+.citation th {
+  padding: .2rem 1rem .2rem .2rem;
+}
+
+.citation td {
+  padding: .2rem .2rem .2rem 1rem;
+  min-width: 70%;
+}
+
+.citation tr:last-child,
+.citation th,
+.citation td {
+  border-bottom: none;
+}
+
+.team-img {
+  width: 200px;
+}
